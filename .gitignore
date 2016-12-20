@@ -129,4 +129,4 @@ ENV/
 # Rope project settings
 
 # Data
-*.txt
+tokenizer_tests/*.txt
