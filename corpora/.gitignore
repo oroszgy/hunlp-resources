@@ -1,4 +1,9 @@
 *.bz2
 *.txt
+*.model
+*.out
+*.npy
+*.int
+*.strdb
 
 wiki_docs
