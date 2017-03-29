@@ -1,6 +1,0 @@
-[submodule "modules/wikiextractor"]
-	path = modules/wikiextractor
-	url = git@github.com:attardi/wikiextractor.git
-[submodule "modules/spacy-dev-resources"]
-	path = modules/spacy-dev-resources
-	url = git@github.com:oroszgy/spacy-dev-resources.git
