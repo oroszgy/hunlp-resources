@@ -1,0 +1,11 @@
+{
+  "lang":"hu",
+  "name":"wiki",
+  "license":"CC BY-NC 3.0",
+  "author":"Gyorgy Orosz",
+  "url":"https://github.com/oroszgy/spacy-hungarian-models",
+  "version":"0.1.0",
+  "spacy_version":">=1.7.0,<2.0.0",
+  "email":"gyorgy@orosz.link",
+  "description":"http://gyorgy.orosz.link"
+}
