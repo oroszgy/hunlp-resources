@@ -1,14 +1,17 @@
 import sys
 
-from spacy.hu import Hungarian as HU
+import spacy.hu
+#import ftfy
 
-TOKENIZER = HU().tokenizer
+TOKENIZER = spacy.hu.Hungarian().tokenizer
 
 
 def process_line(line):
     line = line.strip()
-    if not line.startswith("<") and line:
-        return " ".join(token.orth_ for token in TOKENIZER(line))
+    #line = ftfy.fix_text(line)
+    if line:
+        return " ".join(token.text for token in TOKENIZER(line))
+    return None
 
 
 if __name__ == "__main__":
