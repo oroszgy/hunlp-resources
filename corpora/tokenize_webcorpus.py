@@ -12,11 +12,11 @@ SENT_START = re.compile("^<s>")
 TAG = re.compile(u"<[^<>]+>")
 
 
-def clean_line(line, min_char_ratio=0.8, min_length=10):
+def clean_line(line, min_char_ratio=0.75, min_length=10):
     line = ftfy.fix_text(line)
     line = TAG.sub("", line)
     if line and len(line) > min_length:
-        char_ratio = float(sum(ch.islower() for ch in line)) / len(line)
+        char_ratio = float(sum(ch.islower() for ch in line)) / sum(not ch.isspace() for ch in line)
         if char_ratio > min_char_ratio:
             return line
         else:
