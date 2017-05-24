@@ -5,6 +5,7 @@ import sys
 
 import ftfy
 import spacy.hu
+from tqdm import tqdm
 
 TOKENIZER = spacy.hu.Hungarian().tokenizer
 SENT_START = re.compile("^<s>")
@@ -32,7 +33,7 @@ def sentences(f):
 
 if __name__ == "__main__":
     outdir = sys.argv[2]
-    for fpath in glob.iglob(sys.argv[1]):
+    for fpath in tqdm(glob.glob(sys.argv[1])):
         head, tail = os.path.split(fpath)
         with open(fpath, encoding='iso-8859-2') as inpf, \
                 open("{}/{}".format(outdir, tail), "w", encoding="utf8") as outf:
