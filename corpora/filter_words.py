@@ -8,8 +8,8 @@ WORD_RE = regex.compile("^\p{L}\p{Ll}+$")
 TOO_MANY_PUNCT = regex.compile("\p{P}{4,}")
 NUMBERS = regex.compile("[0-9,.+-]+")
 
-DROP_THRESHOLD = 5
-FREQUENT_WORD_THRESHOLD = 10
+DROP_THRESHOLD = 10
+FREQUENT_WORD_THRESHOLD = 20
 
 
 def keep_token(word, freq):
