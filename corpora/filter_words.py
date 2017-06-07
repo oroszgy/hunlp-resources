@@ -15,7 +15,7 @@ FREQUENT_WORD_THRESHOLD = 20
 def keep_token(word, freq):
     if freq < DROP_THRESHOLD:
         return False
-    elif freq <= FREQUENT_WORD_THRESHOLD:
+    elif freq < FREQUENT_WORD_THRESHOLD:
         return WORD_RE.match(word) is not None
     else:
         if TOO_MANY_PUNCT.search(word) or NUMBERS.match(word):
@@ -31,7 +31,7 @@ def parse_brown(line):
 
 def parse_freq(line):
     tf, df, word = line.split("\t")
-    return eval(word), int(tf)
+    return eval(word), FREQUENT_WORD_THRESHOLD + 1
 
 
 def parse_w2v(line):
